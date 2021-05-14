@@ -19,7 +19,7 @@ exports.up = function (knex) {
       table
         .integer("project_id")
         .unsigned()
-        .required()
+        .notNullable()
         .references("project_id")
         .inTable("projects")
         .onDelete("RESTRICT");
@@ -29,14 +29,14 @@ exports.up = function (knex) {
       table
         .integer("project_id")
         .unsigned()
-        .required()
+        .notNullable()
         .references("project_id")
         .inTable("projects")
         .onDelete("RESTRICT");
       table
         .integer("resource_id")
         .unsigned()
-        .required()
+        .notNullable()
         .references("resource_id")
         .inTable("resources")
         .onDelete("RESTRICT");
