@@ -8,5 +8,9 @@ function get() {
 
 async function create(post) {
   const [resource_id] = await db("resources").insert(post);
-  return db("resources").where({ resource_id });
+  return db
+    .select("resource_name")
+    .from("resources")
+    .where({ resource_id })
+    .first();
 }
